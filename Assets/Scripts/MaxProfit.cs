@@ -42,8 +42,6 @@ public class MaxProfit : MonoBehaviour {
 		return dp[n-1][0];
 	}
 
-	
-
 
 	//多次交易
 	private int MaxProfit2(int[] prices) {
@@ -110,7 +108,8 @@ public class MaxProfit : MonoBehaviour {
 	
 	
 
-	#region #JAVA# 动态规划揭发
+	#region #JAVA# 动态规划解法
+	//https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/solution/yi-ge-tong-yong-fang-fa-tuan-mie-6-dao-gu-piao-wen/
 	//只能买卖一次
 	// private int MaxProfit1111(int[] prices){
 	// 	if(prices.length == 0)
@@ -141,7 +140,23 @@ public class MaxProfit : MonoBehaviour {
 	// 	return dp_i_0;
 	// }
 
+
+	int maxProfit_k_inf(int[] prices){
+		int n = prices.Length;
+		int dp_i_0 = 0, dp_i_1 = int.MinValue;
+		for(int i = 0; i < n; i++){
+			int temp = dp_i_0;
+			dp_i_0 = Math.Max(dp_i_0, dp_i_1 + prices[i]);
+			dp_i_1 = Math.Max(dp_i_1, temp - prices[i]);
+		}
+		return dp_i_0;
+	}
+
 	// 只能买卖两次
+	// dp[i][2][0] = max(dp[i-1][2][0], dp[i-1][2][1] + prices[i])
+	// dp[i][2][1] = max(dp[i-1][2][1], dp[i-1][1][0] - prices[i])
+	// dp[i][1][0] = max(dp[i-1][1][0], dp[i-1][1][1] + prices[i])
+	// dp[i][1][1] = max(dp[i-1][1][1], -prices[i])
 	//  public int maxProfit(int[] prices) {
     //     int dp_i10 = 0, dp_i11 = Integer.MIN_VALUE;
     //     int dp_i20 = 0, dp_i21 = Integer.MIN_VALUE;
@@ -153,6 +168,18 @@ public class MaxProfit : MonoBehaviour {
     //     }
     //     return dp_i20;
     // }
+	public int maxProfit_k_2(int[] prices){
+		int dp_i10 = 0, dp_i11 = int.MinValue;
+		int dp_i20 = 0, dp_i21 = int.MinValue;
+		for(int i = 0; i < prices.Length; i++){
+			int price = prices[i];
+			dp_i20 = Math.Max(dp_i20, dp_i21 + price);
+			dp_i21 = Math.Max(dp_i21, dp_i10 - price);
+			dp_i10 = Math.Max(dp_i10, dp_i11 + price);
+			dp_i11 = Math.Max(dp_i11, -price);
+		}
+		return dp_i20;
+	}
 
 	//买卖K次
 	// int maxProfit_k_any(int max_k, int[] prices) {
