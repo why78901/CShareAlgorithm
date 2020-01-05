@@ -6,6 +6,7 @@ using UnityEngine;
 public class MajorityElement : MonoBehaviour {
 
 	// Use this for initialization
+	//
 	void Start () {
 		
 	}
