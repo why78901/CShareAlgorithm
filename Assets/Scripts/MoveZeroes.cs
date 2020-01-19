@@ -24,11 +24,12 @@ public class MoveZeroes : MonoBehaviour {
                 }
             }
         }
-        for(int i = len - moved - 1; i < len; i++){
+        for(int i = len - moved; i < len; i++){
             nums[i] = 0;
         }
     }
 
+	//双指针法
 	public void moveZeroes2(int[] nums)
 	{
 		int slow = 0;
