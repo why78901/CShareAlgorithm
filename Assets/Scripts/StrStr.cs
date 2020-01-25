@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//字符串匹配 28
 public class StrStr : MonoBehaviour {
 
 	// Use this for initialization
