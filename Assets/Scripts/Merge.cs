@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//合并两个有序数组
+//88.合并两个有序数组
 public class Merge : MonoBehaviour {
 
 	// Use this for initialization

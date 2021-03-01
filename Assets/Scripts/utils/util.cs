@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class util
 {
-    public static string ToString(object obj){
+    public static string ArrayToString(object obj){
         StringBuilder builder = new StringBuilder();
         if (obj is Array){
             Array arr = (Array)obj;

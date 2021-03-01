@@ -9,7 +9,7 @@ public class QuickSort : MonoBehaviour
     void Start(){
         int[] arr = new[]{1, 7, 3, 5, 2, 4};
         quickSort(arr,0, arr.Length - 1);
-        Debug.Log("list end: " + util.ToString(arr));
+        Debug.Log("list end: " + util.ArrayToString(arr));
     }
 
     // Update is called once per frame
