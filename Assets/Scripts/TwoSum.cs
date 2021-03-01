@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+#1.两数之和
 public class TwoSum : MonoBehaviour {
 
 	// Use this for initialization
@@ -46,3 +46,24 @@ public class TwoSum : MonoBehaviour {
 		return arr;
 	}
 }
+
+//两数之和lua版
+// function TwoSum(numbers, target)
+//     local head = 1
+//     local tail = #numbers
+//     while head < tail do
+//       local sum = numbers[head] + numbers[tail]
+//       if sum == target then
+//         break
+//       end
+//       if sum > target then
+//         tail = tail - 1
+//       end
+//       if sum < target then
+//         head = head +1
+//       end
+//     end
+//     return head,tail
+// end
+       
+// print(TwoSum({5,8,10,12,23},20))
